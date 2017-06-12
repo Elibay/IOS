@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5C788B71EEEB4BC00B18D9A /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C788B61EEEB4BC00B18D9A /* CalculatorViewController.swift */; };
 		F5E798971EEEAA8100DF53DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E798961EEEAA8100DF53DB /* AppDelegate.swift */; };
-		F5E798991EEEAA8100DF53DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E798981EEEAA8100DF53DB /* ViewController.swift */; };
 		F5E7989C1EEEAA8100DF53DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E7989A1EEEAA8100DF53DB /* Main.storyboard */; };
 		F5E7989E1EEEAA8100DF53DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5E7989D1EEEAA8100DF53DB /* Assets.xcassets */; };
 		F5E798A11EEEAA8100DF53DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E7989F1EEEAA8100DF53DB /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F5C788B61EEEB4BC00B18D9A /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		F5E798931EEEAA8100DF53DB /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E798961EEEAA8100DF53DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F5E798981EEEAA8100DF53DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F5E7989B1EEEAA8100DF53DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F5E7989D1EEEAA8100DF53DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5E798A01EEEAA8100DF53DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,6 +35,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F5C788B11EEEAC8600B18D9A /* Supporting FIles */ = {
+			isa = PBXGroup;
+			children = (
+				F5E7989D1EEEAA8100DF53DB /* Assets.xcassets */,
+				F5E7989F1EEEAA8100DF53DB /* LaunchScreen.storyboard */,
+				F5E798A21EEEAA8100DF53DB /* Info.plist */,
+			);
+			name = "Supporting FIles";
+			sourceTree = "<group>";
+		};
 		F5E7988A1EEEAA8100DF53DB = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +64,10 @@
 		F5E798951EEEAA8100DF53DB /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				F5C788B61EEEB4BC00B18D9A /* CalculatorViewController.swift */,
 				F5E798961EEEAA8100DF53DB /* AppDelegate.swift */,
-				F5E798981EEEAA8100DF53DB /* ViewController.swift */,
 				F5E7989A1EEEAA8100DF53DB /* Main.storyboard */,
-				F5E7989D1EEEAA8100DF53DB /* Assets.xcassets */,
-				F5E7989F1EEEAA8100DF53DB /* LaunchScreen.storyboard */,
-				F5E798A21EEEAA8100DF53DB /* Info.plist */,
+				F5C788B11EEEAC8600B18D9A /* Supporting FIles */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -136,7 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5E798991EEEAA8100DF53DB /* ViewController.swift in Sources */,
+				F5C788B71EEEB4BC00B18D9A /* CalculatorViewController.swift in Sources */,
 				F5E798971EEEAA8100DF53DB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,6 +309,7 @@
 				F5E798A71EEEAA8100DF53DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
