@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F5C788B71EEEB4BC00B18D9A /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C788B61EEEB4BC00B18D9A /* CalculatorViewController.swift */; };
+		F5D6E5D81EEFFBCA003C6A28 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6E5D71EEFFBCA003C6A28 /* CalculatorBrain.swift */; };
 		F5E798971EEEAA8100DF53DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E798961EEEAA8100DF53DB /* AppDelegate.swift */; };
 		F5E7989C1EEEAA8100DF53DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E7989A1EEEAA8100DF53DB /* Main.storyboard */; };
 		F5E7989E1EEEAA8100DF53DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5E7989D1EEEAA8100DF53DB /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		F5C788B61EEEB4BC00B18D9A /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		F5D6E5D71EEFFBCA003C6A28 /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 		F5E798931EEEAA8100DF53DB /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E798961EEEAA8100DF53DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5E7989B1EEEAA8100DF53DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			children = (
 				F5C788B61EEEB4BC00B18D9A /* CalculatorViewController.swift */,
 				F5E798961EEEAA8100DF53DB /* AppDelegate.swift */,
+				F5D6E5D71EEFFBCA003C6A28 /* CalculatorBrain.swift */,
 				F5E7989A1EEEAA8100DF53DB /* Main.storyboard */,
 				F5C788B11EEEAC8600B18D9A /* Supporting FIles */,
 			);
@@ -104,6 +107,7 @@
 				TargetAttributes = {
 					F5E798921EEEAA8100DF53DB = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = SP769BU977;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -144,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5D6E5D81EEFFBCA003C6A28 /* CalculatorBrain.swift in Sources */,
 				F5C788B71EEEB4BC00B18D9A /* CalculatorViewController.swift in Sources */,
 				F5E798971EEEAA8100DF53DB /* AppDelegate.swift in Sources */,
 			);
@@ -270,9 +275,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SP769BU977;
 				INFOPLIST_FILE = Calculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Enk.Calculator;
+				PRODUCT_BUNDLE_IDENTIFIER = na2a.me.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -282,9 +289,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SP769BU977;
 				INFOPLIST_FILE = Calculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Enk.Calculator;
+				PRODUCT_BUNDLE_IDENTIFIER = na2a.me.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
