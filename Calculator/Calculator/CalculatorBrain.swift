@@ -11,6 +11,7 @@ import Foundation
 struct CalculatorBrain {
     
     private var curentSum: Double? = 0
+    private var globalSum: Double = 0
     private var pbo: PendingOperation?
     mutating func setOperation (_ operand: Double) {
         curentSum = operand
@@ -20,18 +21,19 @@ struct CalculatorBrain {
         case binaryOperation ((Double, Double) -> Double)
         case unaryOperation ((Double) -> Double)
         case result
-        case clear
     }
     private var Operations: [String: Operation] = [
         "π": Operation.constant (Double.pi),
+        
         "√": Operation.unaryOperation(sqrt),
         "±": Operation.unaryOperation({-$0}),
+        
         "÷": Operation.binaryOperation(/),
         "×": Operation.binaryOperation(*),
-        "−": Operation.binaryOperation(-),
+        "-": Operation.binaryOperation(-),
         "+": Operation.binaryOperation(+),
+        
         "=": Operation.result,
-        "AC": Operation.clear
     ]
     private struct PendingOperation {
         var firstOperand: Double
@@ -40,35 +42,48 @@ struct CalculatorBrain {
             return function (firstOperand, secondOperand)
         }
     }
-    mutating func performOperation (_ symbol: String)
-    {
+    mutating func performOperation(_ symbol: String) {
         if let operation = Operations[symbol] {
             switch operation {
-            case .constant (let value):
-                    curentSum = value
-            case .clear:
-                curentSum = 0
-                pbo = nil
-            case .unaryOperation (let function):
-                if curentSum != nil {
-                    curentSum = function (curentSum!)
+            case .constant(let value):
+                curentSum = value
+                globalSum = value
+            case .unaryOperation(let function):
+                if pbo != nil {
+                    curentSum = pbo?.firstOperand
+                    globalSum = curentSum!
                 }
-            case .binaryOperation (let function):
-                pbo?.function = function
                 if curentSum != nil {
-                    pbo = PendingOperation(firstOperand: pbo == nil ? curentSum! : pbo!.perform(with: curentSum!),
-                                                 function: function)
+                    curentSum = function(curentSum!)
+                    globalSum = curentSum!
+                }
+            case .binaryOperation(let function):
+                if curentSum != nil {
+                    if pbo != nil {
+                        curentSum = pbo!.perform (with: curentSum!)
+                    }
+                    pbo = PendingOperation (firstOperand: curentSum!, function: function)
+                    globalSum = curentSum!
                     curentSum = nil
+                }
+                else {
+                    print (globalSum)
+                    pbo = PendingOperation(firstOperand: globalSum, function: function)
                 }
             case .result:
                 if curentSum != nil {
+                    if pbo == nil {
+                        globalSum = curentSum!
+                        break
+                    }
                     curentSum = pbo?.perform(with: curentSum!)
+                    globalSum = curentSum!
                     pbo = nil
                 }
             }
         }
     }
     var result: Double? {
-        return curentSum
+        return globalSum
     }
 }
