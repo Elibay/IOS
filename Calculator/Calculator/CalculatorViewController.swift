@@ -41,7 +41,6 @@ class CalculatorViewController: UIViewController {
             let formatter = NumberFormatter()
             formatter.maximumSignificantDigits = 10
             displayLabel.text = formatter.string(from: newValue as NSNumber)
-            lastValue = displayLabel.text!
         }
     }
     func addDigit(_ numberToAdd: Double) {
@@ -50,20 +49,57 @@ class CalculatorViewController: UIViewController {
         let curentHistoryText = HistoryLabel.text!.replacingOccurrences(of: "...", with: "")
         let textToAdd = curentHistoryText.replacingOccurrences(of: "=", with: "") + formatter.string(from: numberToAdd as NSNumber)!
         HistoryLabel.text = textToAdd + "..."
+        lastValue = formatter.string(from: numberToAdd as NSNumber)!
     }
     func addSymbol(_ symbol: String) {
-        let text1 = HistoryLabel.text!.replacingOccurrences(of: "...", with: "")
+        let text2 = HistoryLabel.text!.replacingOccurrences(of: "...", with: "")
+        let text1 = text2.replacingOccurrences(of: "=", with: "")
+        if text1 == "" {
+            return
+        }
         var curentHistoryText = ""
         switch symbol {
         case "√":
-            let index = text1.index(text1.startIndex, offsetBy: text1.characters.count)
-            curentHistoryText = symbol + "(" + text1.substring(to: index) + ")"
-        case "×":
-            curentHistoryText = "(" + text1 + ")" + symbol
-        case "÷":
-            curentHistoryText = "(" + text1 + ")" + symbol
+            if lastOperation != "=" {
+                let index = text1.index(text1.startIndex, offsetBy: text1.characters.count - lastValue.characters.count)
+                curentHistoryText = text1.substring(to: index) + symbol + "(" + lastValue + ")"
+            }
+            else {
+                curentHistoryText = symbol + "(" + text1 + ")"
+            }
+        case "+":
+            if text1.characters.last! >= "0" && text1.characters.last! <= "9" {
+                curentHistoryText = text1 + symbol
+            }
+            else {
+                curentHistoryText = text1.substring(to: text1.index(before: text1.endIndex)) + symbol
+            }
+        case "-":
+            if text1.characters.last! >= "0" && text1.characters.last! <= "9" {
+                curentHistoryText = text1 + symbol
+            }
+            else {
+                curentHistoryText = text1.substring(to: text1.index(before: text1.endIndex)) + symbol
+            }
+        case "=":
+            if text1.characters.last! >= "0" && text1.characters.last! <= "9" {
+                curentHistoryText = text1 + symbol
+            }
+            else {
+                curentHistoryText = text1.substring(to: text1.index(before: text1.endIndex)) + symbol
+            }
         default:
-            curentHistoryText = text1 + symbol
+            if text1.characters.last! >= "0" && text1.characters.last! <= "9" {
+                curentHistoryText = "(" + text1 + ")" + symbol
+            }
+            else {
+                if text1.characters.last! == "×" || text1.characters.last! == "÷" {
+                    curentHistoryText = text1.substring(to: text1.index(before: text1.endIndex)) + symbol
+                }
+                else {
+                    curentHistoryText = "(" + text1.substring(to: text1.index(before: text1.endIndex)) + ")" + symbol
+                }
+            }
         }
         HistoryLabel.text = curentHistoryText
     }
@@ -95,6 +131,7 @@ class CalculatorViewController: UIViewController {
         if let operation = sender.currentTitle {
             brain.performOperation(operation)
             addSymbol(operation)
+            lastOperation = operation
             if let result = brain.result {
                 displayValue = result
             }

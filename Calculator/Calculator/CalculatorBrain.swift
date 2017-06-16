@@ -73,7 +73,6 @@ struct CalculatorBrain {
                     curentSum = nil
                 }
                 else {
-                    print (globalSum)
                     pbo = PendingOperation(firstOperand: globalSum, function: function)
                 }
             case .result:
