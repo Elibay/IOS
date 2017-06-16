@@ -49,6 +49,12 @@ struct CalculatorBrain {
                 curentSum = value
                 globalSum = value
             case .unaryOperation(let function):
+                if curentSum != nil
+                {
+                    curentSum = function(curentSum!)
+                    globalSum = curentSum!
+                    break
+                }
                 if pbo != nil {
                     curentSum = pbo?.firstOperand
                     globalSum = curentSum!
