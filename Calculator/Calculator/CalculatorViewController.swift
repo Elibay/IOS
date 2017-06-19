@@ -30,9 +30,14 @@ class CalculatorViewController: UIViewController {
         displayLabel.text = "0"
         HistoryLabel.text = ""
         lastOperation = ""
+        sumSqrt = 0
     }
     @IBAction func touchDot(_ sender: UIButton) {
         var text = displayLabel.text!
+        if isDigitClick == false {
+            text = "0"
+            isDigitClick = true
+        }
         if text.characters.index (of: ".") != nil {
             return
         }
@@ -60,11 +65,9 @@ class CalculatorViewController: UIViewController {
         formatter.maximumSignificantDigits = 10
         let curentHistoryText = HistoryLabel.text!.replacingOccurrences(of: "=", with: "")
         if curentHistoryText.characters.count == 0 || (isDigit (curentHistoryText.characters.last!) == false && lastOperation != "√" && lastOperation != "π"){
-            print (lastOperation)
             let textToAdd = curentHistoryText + formatter.string(from: numberToAdd as NSNumber)!
             HistoryLabel.text = textToAdd + "..."
-        }
-        else {
+        } else {
             HistoryLabel.text = formatter.string(from: numberToAdd as NSNumber)!
         }
         lastValue = formatter.string(from: numberToAdd as NSNumber)!
@@ -73,11 +76,11 @@ class CalculatorViewController: UIViewController {
     func addSymbol(_ symbol: String) {
         let text2 = HistoryLabel.text!.replacingOccurrences(of: "...", with: "")
         let text1 = text2.replacingOccurrences(of: "=", with: "")
+        let sz = text1.characters.count - 1
         if text1 == "" {
             return
         }
         var curentHistoryText = ""
-        
         switch symbol {
         case "√":
             if lastOperation == "√" {
@@ -87,7 +90,7 @@ class CalculatorViewController: UIViewController {
                     curentHistoryText = curentHistoryText + ")"
                 }
             }
-            else if pressedDigit == false {
+            else if pressedDigit == false && lastOperation != "=" {
                 curentHistoryText = text1 + symbol + "(" + text1.substring(to: text1.index(before: text1.endIndex)) + ")"
             }
             else if lastOperation != "=" {
@@ -99,7 +102,7 @@ class CalculatorViewController: UIViewController {
             }
             sumSqrt += 1
         case "+":
-            if text1.characters.last! >= "0" && text1.characters.last! <= "9" || text1.characters.last! == ")"{
+            if text1[sz] >= "0" && text1[sz] <= "9" || text1[sz] == ")" || text1[sz] == "π" {
                 curentHistoryText = text1 + symbol
             }
             else {
@@ -109,21 +112,22 @@ class CalculatorViewController: UIViewController {
             if lastOperation == "π" {
                 return
             }
-            if text1.characters.last! == "+" || text1.characters.last! == "-" || text1.characters.last! == "×" || text1.characters.last! == "÷"{
+            if text1[sz] == "+" || text1[sz] == "-" || text1[sz] == "×" || text1[sz] == "÷"{
                 curentHistoryText = text1 + symbol
             }
             else {
                 curentHistoryText = symbol
             }
         case "-":
-            if text1.characters.last! >= "0" && text1.characters.last! <= "9" || text1.characters.last! == ")" {
+            if text1[sz] >= "0" && text1[sz] <= "9" || text1[sz] == ")" || text1[sz] == "π" {
                 curentHistoryText = text1 + symbol
             }
             else {
                 curentHistoryText = text1.substring(to: text1.index(before: text1.endIndex)) + symbol
             }
         case "=":
-            if text1.characters.last! >= "0" && text1.characters.last! <= "9" || text1.characters.last! == ")" {
+            if text1[sz] >= "0" && text1[sz] <= "9" || text1[sz] == ")" || text1[sz] == "π" {
+                
                 curentHistoryText = text1 + symbol
             }
             else {
@@ -131,8 +135,7 @@ class CalculatorViewController: UIViewController {
             }
         case "±":
             if text1[0] != "-" {
-                if (text1[0] != "(")
-                {
+                if (text1[0] != "(") {
                     curentHistoryText = "-(" + text1 + ")"
                 }
                 else {
@@ -144,16 +147,19 @@ class CalculatorViewController: UIViewController {
                 curentHistoryText = text1
                 curentHistoryText.remove(at: curentHistoryText.startIndex)
             }
+        // pressing / or *
         default:
-            if text1.characters.last! >= "0" && text1.characters.last! <= "9"  || text1.characters.last! == ")" || text1.characters.last! == "π"{
+            print (text1)
+            if text1[sz] >= "0" && text1[sz] <= "9" || text1[sz] == "π"{
                 curentHistoryText = "(" + text1 + ")" + symbol
             }
             else {
-                if text1.characters.last! == "×" || text1.characters.last! == "÷" {
-                    curentHistoryText = text1.substring(to: text1.index(before: text1.endIndex)) + symbol
-                }
-                else {
+                if (text1[sz] == "+" || text1[sz] == "-") && (text1[sz - 1] >= "0" && text1[sz - 1] <= "9" || text1[sz] == "π") {
                     curentHistoryText = "(" + text1.substring(to: text1.index(before: text1.endIndex)) + ")" + symbol
+                }
+                else
+                {
+                    curentHistoryText = text1.substring(to: text1.index(before: text1.endIndex)) + symbol
                 }
             }
         }
