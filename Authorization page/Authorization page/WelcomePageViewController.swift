@@ -24,6 +24,7 @@ extension UIViewController {
     struct Contstants {
         static let passwordSegue = "Show Password Segue"
         static let userInfoSegue = "Hello Page Segue"
+        static let logOutSegue = "Log Out Segue"
     }
 }
 
@@ -80,5 +81,6 @@ class WelcomePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 }

@@ -18,7 +18,15 @@ class HelloPageViewController: UIViewController {
     private func updateUI () {
         helloPageText?.text = user.email
     }
+    @IBAction func logOut(_ sender: UIButton) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let secondVC = storyBoard.instantiateViewController(withIdentifier: "MainView")
+        
+        self.present(secondVC, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         super.viewDidLoad()
         updateUI()
     }

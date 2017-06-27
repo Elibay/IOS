@@ -56,7 +56,6 @@ class PasswordViewController: UIViewController, NVActivityIndicatorViewable {
     }
     // MARK: - навигация
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print (segue.identifier!)
         switch segue.identifier! {
         case UIViewController.Contstants.userInfoSegue:
             let destinationVC = segue.destination as! HelloPageViewController
@@ -66,6 +65,7 @@ class PasswordViewController: UIViewController, NVActivityIndicatorViewable {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.hideKeyboardWhenTappedAround()
     }
 }
