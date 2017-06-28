@@ -13,11 +13,15 @@ struct User {
     var token = ""
     var id = 0
     var email = ""
+    var name = ""
+    var imageUrl = ""
     init(from json: [String: Any]){
         token = json["token"] as! String
         let user = json["user"] as! [String: Any]
         id = user["id"] as! Int
         email = user["username"] as! String
+        name = user["full_name"] as! String
+        imageUrl = user["avatar"] as! String
     }
     static func Authorize (email: String, password: String, completion: @escaping (User?, String?) -> Void) {
         let parameters = ["username": email, "password": password]
@@ -31,9 +35,9 @@ struct User {
                 case 0:
                     completion(User(from: json), nil)
                 case 6:
-                    completion(nil, "email not found in server")
+                    completion(nil, "Введите правильный email")
                 default:
-                    print("Пришел код ошибки, который мы не обрабатываем")
+                    completion (nil, "Введите правильный пароль")
                 }
             case .failure(let error):
             completion(nil, error.localizedDescription)

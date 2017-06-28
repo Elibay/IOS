@@ -9,14 +9,16 @@
 import UIKit
 
 class HelloPageViewController: UIViewController {
-    @IBOutlet weak var helloPageText: UILabel!
+    @IBOutlet weak var nameText: UILabel!
+    @IBOutlet weak var emailText: UILabel!
     var user: User! {
         didSet {
             updateUI()
         }
     }
     private func updateUI () {
-        helloPageText?.text = user.email
+        nameText?.text = user.name
+        emailText?.text = user.email
     }
     @IBAction func logOut(_ sender: UIButton) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

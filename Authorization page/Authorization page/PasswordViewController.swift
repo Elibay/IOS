@@ -9,42 +9,45 @@
 import UIKit
 import NVActivityIndicatorView
 
+private struct constants
+{
+    static let userInfoSegue = "Hello Page Segue"
+}
 
 class PasswordViewController: UIViewController, NVActivityIndicatorViewable {
     // MARK: - outlets
     @IBOutlet weak var passwordText: UITextField!
     var email: String!
-    @IBOutlet weak var Viewer: UIView!
     
+    @IBOutlet weak var viewer: UIView!
     // MARK: - actions
     @IBAction func passwordDidEnd(_ sender: UITextField) {
-        Viewer.backgroundColor = UIColor.lightGray
+        viewer.backgroundColor = UIColor.lightGray
     }
     
     @IBAction func passwordDidBegin(_ sender: UITextField) {
-        Viewer.backgroundColor = UIViewController.Color
+        viewer.backgroundColor = UIViewController.Color
     }
     
-    @IBAction func nextSegueAction(_ sender: UITextField) {
+    @IBAction func nextSegueAction() {
         let password = passwordText.text!
         if password.characters.count < 4 {
-            let alert = UIAlertController(title: "УПС!", message: "Слишком короткий пароль", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            showAlert( "Слишком короткий пароль")
+            return
         }
         startAnimating()
         User.Authorize(email: email, password: password) { user, message in
             self.stopAnimating()
             if let message = message {
-                print (message)
+                self.showAlert (message)
+                return
             } else {
-                self.performSegue(withIdentifier: UIViewController.Contstants.userInfoSegue,
-                                  sender: user!)
+                self.performSegue(withIdentifier: constants.userInfoSegue, sender: user!)
             }
         }
     }
-    @IBAction func PasswordEditingAction(_ sender: UITextField) {
-        Viewer.backgroundColor = UIColor (red: 205/255, green: 109/255, blue: 0/255, alpha: 1)
+    @IBAction func passwordEditingAction(_ sender: UITextField) {
+        viewer.backgroundColor = UIViewController.Color
         if !passwordText.text!.isEmpty {
             if self.navigationItem.rightBarButtonItem == nil {
                 self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Далее", style: UIBarButtonItemStyle.plain, target: nil, action: #selector(PasswordViewController.nextSegueAction))
@@ -57,7 +60,7 @@ class PasswordViewController: UIViewController, NVActivityIndicatorViewable {
     // MARK: - навигация
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier! {
-        case UIViewController.Contstants.userInfoSegue:
+        case constants.userInfoSegue:
             let destinationVC = segue.destination as! HelloPageViewController
             destinationVC.user = sender as! User
         default: break
@@ -66,6 +69,13 @@ class PasswordViewController: UIViewController, NVActivityIndicatorViewable {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        self.hideKeyboardWhenTappedAround()
+        passwordText.delegate = self
+    }
+}
+extension PasswordViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
+        textField.resignFirstResponder()
+        nextSegueAction()
+        return true
     }
 }

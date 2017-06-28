@@ -1,18 +1,22 @@
 PODS:
   - Alamofire (4.5.0)
+  - AlamofireImage (3.2.0):
+    - Alamofire (~> 4.1)
   - IQKeyboardManagerSwift (4.0.10)
   - NVActivityIndicatorView (3.6.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
+  - AlamofireImage (~> 3.2)
   - IQKeyboardManagerSwift
   - NVActivityIndicatorView
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   IQKeyboardManagerSwift: 75ba21a23794a1e6b6fe6d9a267ea17f80e06771
   NVActivityIndicatorView: 9f52a7f84bf5c6a798722c450fe3c198e01c56ed
 
-PODFILE CHECKSUM: 92639b2f92490948efde8f2c3505b3af99608f84
+PODFILE CHECKSUM: a55f114c4c2b3b6e07cb9591aecebde8eb9493df
 
 COCOAPODS: 1.2.1

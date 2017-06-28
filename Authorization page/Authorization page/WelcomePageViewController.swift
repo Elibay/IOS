@@ -7,60 +7,59 @@
 //
 
 import UIKit
+
 extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
     static let Color = UIColor (red: 255/255, green: 109/255, blue: 0/255, alpha: 1)
-    func dismissKeyboard() {
-        view.endEditing(true)
-    }
+
     func validateEmail(_ enteredEmail: String) -> Bool {
         let emailPredicate = NSPredicate(format:"SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
         return emailPredicate.evaluate(with: enteredEmail)
     }
-    struct Contstants {
-        static let passwordSegue = "Show Password Segue"
-        static let userInfoSegue = "Hello Page Segue"
-        static let logOutSegue = "Log Out Segue"
+    func showAlert (_ message: String)
+    {
+        let title = "УПС!"
+        let answer = "OK"
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: answer, style: UIAlertActionStyle.default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
 
+private struct Contstants {
+    static let passwordSegue = "Show Password Segue"
+}
 
 class WelcomePageViewController: UIViewController {
     
     // MARK: - outlets
-    @IBOutlet weak var emailText: UITextField!
-    @IBOutlet weak var Viewer: UIView!
+    @IBOutlet private weak var emailText: UITextField!
+    @IBOutlet private weak var viewer: UIView!
     
     // MARK: - actions
     @IBAction func emailDidEnd(_ sender: UITextField) {
-        Viewer.backgroundColor = UIColor.lightGray
+        viewer.backgroundColor = UIColor.lightGray
     }
     
     @IBAction func emailDidBegin(_ sender: UITextField) {
-        Viewer.backgroundColor = UIViewController.Color
+        viewer.backgroundColor = UIViewController.Color
     }
     
     @IBAction func editingEmail(_ sender: UITextField) {
         if !emailText.text!.isEmpty {
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Далее", style: UIBarButtonItemStyle.plain, target: nil, action: #selector (WelcomePageViewController.ShowPasswordPage))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Далее", style: UIBarButtonItemStyle.plain, target: nil, action: #selector (WelcomePageViewController.showPasswordPage))
         }
         else {
             self.navigationItem.rightBarButtonItem = nil
         }
     }
-    func ShowPasswordPage(_ sender: UIBarButtonItem) {
-        
+    
+    func showPasswordPage() {
         let email = emailText.text!
         
         // проверка на правильность емайла
         if validateEmail(email) == false {
-            let alert = UIAlertController(title: "УПС!", message: "Введите правильный email", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            showAlert ("Введите правильный email")
+            return
         }
         performSegue(withIdentifier: Contstants.passwordSegue, sender: email)
     }
@@ -80,7 +79,14 @@ class WelcomePageViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        emailText.delegate = self
+    }
+}
+extension WelcomePageViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        showPasswordPage()
+        return true
     }
 }
