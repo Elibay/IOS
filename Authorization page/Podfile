@@ -4,4 +4,6 @@ target 'Authorization page' do
     pod 'NVActivityIndicatorView'
     pod 'IQKeyboardManagerSwift'
     pod 'AlamofireImage', '~> 3.2'
+    pod 'ObjectMapper', '~> 2.2'
+    pod 'Cache'
 end

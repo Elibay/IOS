@@ -10,9 +10,13 @@ import UIKit
 import NVActivityIndicatorView
 
 class HelloPageViewController: UIViewController, NVActivityIndicatorViewable {
+    // MARK: - outlets
+    
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var nameText: UILabel!
-    @IBOutlet weak var emailText: UILabel!
+    @IBOutlet weak var backgroundImage: UIImageView!
+    
+    // MARK: - actions
     var user: User! {
         didSet {
             updateUI()
@@ -20,7 +24,6 @@ class HelloPageViewController: UIViewController, NVActivityIndicatorViewable {
     }
     private func updateUI () {
         nameText?.text = user.name
-        emailText?.text = user.email
         self.startAnimating ()
         ImageDownloader.fetchImage(with: user.imageUrl) { image in
             self.stopAnimating()
@@ -35,6 +38,8 @@ class HelloPageViewController: UIViewController, NVActivityIndicatorViewable {
     }
     
     override func viewDidLoad() {
+        self.avatarImage.layer.cornerRadius = self.avatarImage.frame.size.width / 2;
+        self.avatarImage.clipsToBounds = true
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         super.viewDidLoad()
         updateUI()

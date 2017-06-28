@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F200A628B78D004778B3E501 /* Pods_Authorization_page.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4511B412BDF02A6F2AF2FFAE /* Pods_Authorization_page.framework */; };
 		F5AFE9921EFD800D00104DD3 /* HelloPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AFE9911EFD800D00104DD3 /* HelloPageViewController.swift */; };
+		F5B4403C1F043223006DBEDE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5B4403B1F043223006DBEDE /* Images.xcassets */; };
 		F5BB6FDB1EFBB13F000412DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BB6FDA1EFBB13F000412DF /* AppDelegate.swift */; };
 		F5BB6FE01EFBB13F000412DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BB6FDE1EFBB13F000412DF /* Main.storyboard */; };
 		F5BB6FE21EFBB13F000412DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5BB6FE11EFBB13F000412DF /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		4511B412BDF02A6F2AF2FFAE /* Pods_Authorization_page.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Authorization_page.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B065CE6F3C38183640509746 /* Pods-Authorization page.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authorization page.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Authorization page/Pods-Authorization page.debug.xcconfig"; sourceTree = "<group>"; };
 		F5AFE9911EFD800D00104DD3 /* HelloPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloPageViewController.swift; sourceTree = "<group>"; };
+		F5B4403B1F043223006DBEDE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F5BB6FD71EFBB13F000412DF /* Authorization page.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Authorization page.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5BB6FDA1EFBB13F000412DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5BB6FDF1EFBB13F000412DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		F5BB6FEC1EFBB163000412DF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F5B4403B1F043223006DBEDE /* Images.xcassets */,
 				F5BB6FDA1EFBB13F000412DF /* AppDelegate.swift */,
 				F5BB6FE11EFBB13F000412DF /* Assets.xcassets */,
 				F5BB6FE31EFBB13F000412DF /* LaunchScreen.storyboard */,
@@ -199,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5BB6FE51EFBB13F000412DF /* LaunchScreen.storyboard in Resources */,
+				F5B4403C1F043223006DBEDE /* Images.xcassets in Resources */,
 				F5BB6FE21EFBB13F000412DF /* Assets.xcassets in Resources */,
 				F5BB6FE01EFBB13F000412DF /* Main.storyboard in Resources */,
 			);
@@ -390,6 +394,7 @@
 			baseConfigurationReference = B065CE6F3C38183640509746 /* Pods-Authorization page.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = SP769BU977;
 				INFOPLIST_FILE = "Authorization page/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -405,6 +410,7 @@
 			baseConfigurationReference = 41D0C7EBF2606469547D2E7B /* Pods-Authorization page.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = SP769BU977;
 				INFOPLIST_FILE = "Authorization page/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
