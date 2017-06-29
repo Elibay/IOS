@@ -9,7 +9,7 @@
 import UIKit
 import NVActivityIndicatorView
 
-private struct constants
+private struct Constants
 {
     static let userInfoSegue = "Hello Page Segue"
 }
@@ -42,7 +42,8 @@ class PasswordViewController: UIViewController, NVActivityIndicatorViewable {
                 self.showAlert (message)
                 return
             } else {
-                self.performSegue(withIdentifier: constants.userInfoSegue, sender: user!)
+                Storage.user = user
+                self.performSegue(withIdentifier: Constants.userInfoSegue, sender: user!)
             }
         }
     }
@@ -60,8 +61,8 @@ class PasswordViewController: UIViewController, NVActivityIndicatorViewable {
     // MARK: - навигация
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier! {
-        case constants.userInfoSegue:
-            let destinationVC = segue.destination as! HelloPageViewController
+        case Constants.userInfoSegue:
+            let destinationVC = segue.destination as! UserPageViewController
             destinationVC.user = sender as! User
         default: break
         }

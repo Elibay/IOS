@@ -207,10 +207,10 @@
             </objects>
             <point key="canvasLocation" x="936.79999999999995" y="715.59220389805103"/>
         </scene>
-        <!--Hello Page View Controller-->
+        <!--User Page View Controller-->
         <scene sceneID="SGX-aU-FET">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="fhZ-Qi-ohA" customClass="HelloPageViewController" customModule="Authorization_page" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="User Page" automaticallyAdjustsScrollViewInsets="NO" id="fhZ-Qi-ohA" customClass="UserPageViewController" customModule="Authorization_page" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mrv-1s-nI0"/>
                         <viewControllerLayoutGuide type="bottom" id="YjJ-ys-mDJ"/>
@@ -220,7 +220,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dcz-k7-cOH">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wM6-XT-6hN">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -229,7 +229,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vBo-37-eMn" userLabel="Name Label">
-                                                <rect key="frame" x="0.0" y="150" width="375" height="50"/>
+                                                <rect key="frame" x="0.0" y="160" width="375" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Mqo-u4-FTv"/>
                                                 </constraints>
@@ -237,25 +237,31 @@
                                                 <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                                 <color key="highlightedColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <size key="shadowOffset" width="1" height="1"/>
+                                                <size key="shadowOffset" width="1" height="2"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZXV-CJ-6D2">
-                                                <rect key="frame" x="125" y="10" width="125" height="120"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="120" id="JBF-eJ-lcz"/>
-                                                </constraints>
-                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2c-TL-HSV">
                                                 <rect key="frame" x="125" y="589" width="125" height="70"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="33"/>
+                                                <size key="titleShadowOffset" width="1" height="2"/>
                                                 <state key="normal" title="Log Out">
                                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="logOut:" destination="fhZ-Qi-ohA" eventType="touchUpInside" id="LYV-qP-CjM"/>
                                                 </connections>
                                             </button>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dig-oo-QaD">
+                                                <rect key="frame" x="177" y="60" width="20" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </activityIndicatorView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZXV-CJ-6D2">
+                                                <rect key="frame" x="125" y="20" width="125" height="120"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="120" id="JBF-eJ-lcz"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -268,7 +274,7 @@
                                             <constraint firstItem="5jr-nS-x7T" firstAttribute="top" secondItem="wM6-XT-6hN" secondAttribute="top" id="gyd-iU-Xq0"/>
                                             <constraint firstItem="vBo-37-eMn" firstAttribute="leading" secondItem="wM6-XT-6hN" secondAttribute="leading" id="k43-Ux-gKn"/>
                                             <constraint firstItem="vBo-37-eMn" firstAttribute="top" secondItem="ZXV-CJ-6D2" secondAttribute="bottom" constant="20" id="sSx-fS-mq3"/>
-                                            <constraint firstItem="ZXV-CJ-6D2" firstAttribute="top" secondItem="wM6-XT-6hN" secondAttribute="top" constant="10" id="wO2-E6-lEN"/>
+                                            <constraint firstItem="ZXV-CJ-6D2" firstAttribute="top" secondItem="wM6-XT-6hN" secondAttribute="top" constant="20" id="wO2-E6-lEN"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -282,8 +288,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Dcz-k7-cOH" firstAttribute="top" secondItem="mrv-1s-nI0" secondAttribute="bottom" id="7bt-yN-YBL"/>
                             <constraint firstItem="wM6-XT-6hN" firstAttribute="height" secondItem="Py2-HV-CHu" secondAttribute="height" id="85V-5d-FSh"/>
+                            <constraint firstItem="Dcz-k7-cOH" firstAttribute="top" secondItem="Py2-HV-CHu" secondAttribute="top" id="B5W-2U-2Kr"/>
                             <constraint firstAttribute="trailing" secondItem="Dcz-k7-cOH" secondAttribute="trailing" id="HED-nj-28a"/>
                             <constraint firstItem="wM6-XT-6hN" firstAttribute="width" secondItem="Py2-HV-CHu" secondAttribute="width" id="Mxw-Hm-qZj"/>
                             <constraint firstItem="YjJ-ys-mDJ" firstAttribute="top" secondItem="Dcz-k7-cOH" secondAttribute="bottom" id="Ycz-a6-ezF"/>
@@ -294,6 +300,7 @@
                         <outlet property="avatarImage" destination="ZXV-CJ-6D2" id="J9G-cK-YXH"/>
                         <outlet property="backgroundImage" destination="5jr-nS-x7T" id="fh2-aJ-Pce"/>
                         <outlet property="nameText" destination="vBo-37-eMn" id="4md-IR-zpI"/>
+                        <outlet property="spiner" destination="dig-oo-QaD" id="ZED-8N-KU5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxB-GF-zuq" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -15,15 +15,25 @@ import IQKeyboardManagerSwift
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    
+        // spinner settings
         NVActivityIndicatorView.DEFAULT_TYPE = .ballTrianglePath
         NVActivityIndicatorView.DEFAULT_COLOR = UIColor (red: 205/255, green: 109/255, blue: 0/255, alpha: 1)
         NVActivityIndicatorView.DEFAULT_BLOCKER_BACKGROUND_COLOR = UIColor.white.withAlphaComponent (0.5)
-        // настройки клв
+        
+        // keyboard settings
         let keyboardManager = IQKeyboardManager.sharedManager()
         keyboardManager.enable = true
         keyboardManager.shouldResignOnTouchOutside = true
         keyboardManager.keyboardDistanceFromTextField = 60
         
+//         cache setting
+        if Storage.user != nil {
+            window?.rootViewController = Storyboard.userPage
+        }
+        else {
+            window?.rootViewController = Storyboard.authorizationPage
+        }
         // Override point for customization after application launch.
         return true
     }

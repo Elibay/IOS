@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F200A628B78D004778B3E501 /* Pods_Authorization_page.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4511B412BDF02A6F2AF2FFAE /* Pods_Authorization_page.framework */; };
-		F5AFE9921EFD800D00104DD3 /* HelloPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AFE9911EFD800D00104DD3 /* HelloPageViewController.swift */; };
+		F5AFE9921EFD800D00104DD3 /* UserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AFE9911EFD800D00104DD3 /* UserPageViewController.swift */; };
 		F5B4403C1F043223006DBEDE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5B4403B1F043223006DBEDE /* Images.xcassets */; };
 		F5BB6FDB1EFBB13F000412DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BB6FDA1EFBB13F000412DF /* AppDelegate.swift */; };
 		F5BB6FE01EFBB13F000412DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BB6FDE1EFBB13F000412DF /* Main.storyboard */; };
@@ -17,14 +17,16 @@
 		F5BB6FEE1EFBB739000412DF /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BB6FED1EFBB739000412DF /* WelcomePageViewController.swift */; };
 		F5BB6FF21EFBD2CA000412DF /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BB6FF11EFBD2CA000412DF /* PasswordViewController.swift */; };
 		F5BB6FF51EFD07BB000412DF /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BB6FF41EFD07BB000412DF /* Users.swift */; };
-		F5D92A8C1F03E96B0064B974 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D92A8B1F03E96B0064B974 /* File.swift */; };
+		F5D92A8C1F03E96B0064B974 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D92A8B1F03E96B0064B974 /* ImageDownloader.swift */; };
+		F5ED169E1F04E1BC001BC538 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED169D1F04E1BC001BC538 /* Storage.swift */; };
+		F5ED16A01F04E877001BC538 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED169F1F04E877001BC538 /* Storyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		41D0C7EBF2606469547D2E7B /* Pods-Authorization page.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authorization page.release.xcconfig"; path = "Pods/Target Support Files/Pods-Authorization page/Pods-Authorization page.release.xcconfig"; sourceTree = "<group>"; };
 		4511B412BDF02A6F2AF2FFAE /* Pods_Authorization_page.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Authorization_page.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B065CE6F3C38183640509746 /* Pods-Authorization page.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authorization page.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Authorization page/Pods-Authorization page.debug.xcconfig"; sourceTree = "<group>"; };
-		F5AFE9911EFD800D00104DD3 /* HelloPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelloPageViewController.swift; sourceTree = "<group>"; };
+		F5AFE9911EFD800D00104DD3 /* UserPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPageViewController.swift; sourceTree = "<group>"; };
 		F5B4403B1F043223006DBEDE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F5BB6FD71EFBB13F000412DF /* Authorization page.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Authorization page.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5BB6FDA1EFBB13F000412DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -35,7 +37,9 @@
 		F5BB6FED1EFBB739000412DF /* WelcomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePageViewController.swift; sourceTree = "<group>"; };
 		F5BB6FF11EFBD2CA000412DF /* PasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		F5BB6FF41EFD07BB000412DF /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
-		F5D92A8B1F03E96B0064B974 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		F5D92A8B1F03E96B0064B974 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		F5ED169D1F04E1BC001BC538 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		F5ED169F1F04E877001BC538 /* Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +125,7 @@
 			children = (
 				F5BB6FED1EFBB739000412DF /* WelcomePageViewController.swift */,
 				F5BB6FF11EFBD2CA000412DF /* PasswordViewController.swift */,
-				F5AFE9911EFD800D00104DD3 /* HelloPageViewController.swift */,
+				F5AFE9911EFD800D00104DD3 /* UserPageViewController.swift */,
 			);
 			name = VIewControllers;
 			sourceTree = "<group>";
@@ -130,7 +134,9 @@
 			isa = PBXGroup;
 			children = (
 				F5BB6FF41EFD07BB000412DF /* Users.swift */,
-				F5D92A8B1F03E96B0064B974 /* File.swift */,
+				F5D92A8B1F03E96B0064B974 /* ImageDownloader.swift */,
+				F5ED169D1F04E1BC001BC538 /* Storage.swift */,
+				F5ED169F1F04E877001BC538 /* Storyboard.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -264,10 +270,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5BB6FF51EFD07BB000412DF /* Users.swift in Sources */,
-				F5D92A8C1F03E96B0064B974 /* File.swift in Sources */,
+				F5D92A8C1F03E96B0064B974 /* ImageDownloader.swift in Sources */,
+				F5ED169E1F04E1BC001BC538 /* Storage.swift in Sources */,
 				F5BB6FEE1EFBB739000412DF /* WelcomePageViewController.swift in Sources */,
+				F5ED16A01F04E877001BC538 /* Storyboard.swift in Sources */,
 				F5BB6FDB1EFBB13F000412DF /* AppDelegate.swift in Sources */,
-				F5AFE9921EFD800D00104DD3 /* HelloPageViewController.swift in Sources */,
+				F5AFE9921EFD800D00104DD3 /* UserPageViewController.swift in Sources */,
 				F5BB6FF21EFBD2CA000412DF /* PasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

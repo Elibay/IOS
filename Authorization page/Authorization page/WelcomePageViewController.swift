@@ -9,18 +9,17 @@
 import UIKit
 
 extension UIViewController {
+    
     static let Color = UIColor (red: 255/255, green: 109/255, blue: 0/255, alpha: 1)
 
     func validateEmail(_ enteredEmail: String) -> Bool {
         let emailPredicate = NSPredicate(format:"SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
         return emailPredicate.evaluate(with: enteredEmail)
     }
-    func showAlert (_ message: String)
-    {
-        let title = "УПС!"
-        let answer = "OK"
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: answer, style: UIAlertActionStyle.default, handler: nil))
+    
+    func showAlert (_ message: String) {
+        let alert = UIAlertController(title: "УПС!", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
 }
@@ -45,6 +44,8 @@ class WelcomePageViewController: UIViewController {
     }
     
     @IBAction func editingEmail(_ sender: UITextField) {
+        
+        // adding button "Далее"
         if !emailText.text!.isEmpty {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Далее", style: UIBarButtonItemStyle.plain, target: nil, action: #selector (WelcomePageViewController.showPasswordPage))
         }
@@ -54,13 +55,15 @@ class WelcomePageViewController: UIViewController {
     }
     
     func showPasswordPage() {
+        
         let email = emailText.text!
         
-        // проверка на правильность емайла
+        // testing valid email
         if validateEmail(email) == false {
             showAlert ("Введите правильный email")
             return
         }
+        // changing curent view'shka
         performSegue(withIdentifier: Contstants.passwordSegue, sender: email)
     }
     

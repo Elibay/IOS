@@ -8,21 +8,29 @@
 
 import Foundation
 import Alamofire
+import ObjectMapper
 
-struct User {
+struct User: Mappable {
+    
+    // MARK: - outlets
     var token = ""
     var id = 0
     var email = ""
     var name = ""
     var imageUrl = ""
-    init(from json: [String: Any]){
-        token = json["token"] as! String
-        let user = json["user"] as! [String: Any]
-        id = user["id"] as! Int
-        email = user["username"] as! String
-        name = user["full_name"] as! String
-        imageUrl = user["avatar"] as! String
+    
+    // MARK: - setting data
+    init?(map: Map) { }
+    mutating func mapping(map: Map) {
+        token <- map["token"]
+        id <- map["user.id"]
+        email <- map["user.username"]
+        name <- map["user.full_name"]
+        imageUrl <- map["user.avatar"]
+
     }
+    
+    // MARK: - authorization function
     static func Authorize (email: String, password: String, completion: @escaping (User?, String?) -> Void) {
         let parameters = ["username": email, "password": password]
         let url = "https://apivotem.solf.io/api/authe/login/"
@@ -33,7 +41,7 @@ struct User {
                 let code = json["code"] as! Int
                 switch code {
                 case 0:
-                    completion(User(from: json), nil)
+                    completion(User(JSON: json)!, nil)
                 case 6:
                     completion(nil, "Введите правильный email")
                 default:
