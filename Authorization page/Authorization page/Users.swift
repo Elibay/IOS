@@ -5,7 +5,6 @@
 //  Created by Elibay Nuptebek on 23.06.17.
 //  Copyright © 2017 Elibay Nuptebek. All rights reserved.
 //
-
 import Foundation
 import Alamofire
 import ObjectMapper
@@ -27,11 +26,11 @@ struct User: Mappable {
         email <- map["user.username"]
         name <- map["user.full_name"]
         imageUrl <- map["user.avatar"]
-
+        
     }
     
     // MARK: - authorization function
-    static func Authorize (email: String, password: String, completion: @escaping (User?, String?) -> Void) {
+    static func authorize (email: String, password: String, completion: @escaping (User?, String?) -> Void) {
         let parameters = ["username": email, "password": password]
         let url = "https://apivotem.solf.io/api/authe/login/"
         Alamofire.request(url, method: .post, parameters: parameters).responseJSON { response in
@@ -48,7 +47,7 @@ struct User: Mappable {
                     completion (nil, "Введите правильный пароль")
                 }
             case .failure(let error):
-            completion(nil, error.localizedDescription)
+                completion(nil, error.localizedDescription)
             }
         }
     }

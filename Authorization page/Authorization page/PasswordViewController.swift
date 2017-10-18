@@ -11,7 +11,8 @@ import NVActivityIndicatorView
 
 private struct Constants
 {
-    static let userInfoSegue = "Hello Page Segue"
+    static let userInfoSegue = "User Page Segue"
+    static let newsInfoSegue = "Feed Segue"
 }
 
 class PasswordViewController: UIViewController, NVActivityIndicatorViewable {
@@ -25,7 +26,7 @@ class PasswordViewController: UIViewController, NVActivityIndicatorViewable {
         viewer.backgroundColor = UIColor.lightGray
     }
     
-    @IBAction func passwordDidBegin(_ sender: UITextField) {
+    @IBAction private func passwordDidBegin(_ sender: UITextField) {
         viewer.backgroundColor = UIViewController.Color
     }
     
@@ -36,14 +37,13 @@ class PasswordViewController: UIViewController, NVActivityIndicatorViewable {
             return
         }
         startAnimating()
-        User.Authorize(email: email, password: password) { user, message in
+        User.authorize(email: email, password: password) { user, message in
             self.stopAnimating()
             if let message = message {
                 self.showAlert (message)
                 return
             } else {
-                Storage.user = user
-                self.performSegue(withIdentifier: Constants.userInfoSegue, sender: user!)
+                self.performSegue(withIdentifier: Constants.newsInfoSegue, sender: user!)
             }
         }
     }
@@ -51,7 +51,7 @@ class PasswordViewController: UIViewController, NVActivityIndicatorViewable {
         viewer.backgroundColor = UIViewController.Color
         if !passwordText.text!.isEmpty {
             if self.navigationItem.rightBarButtonItem == nil {
-                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Далее", style: UIBarButtonItemStyle.plain, target: nil, action: #selector(PasswordViewController.nextSegueAction))
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Далее", style: UIBarButtonItemStyle.plain, target: self, action: #selector(PasswordViewController.nextSegueAction))
             }
         }
         else {
@@ -61,15 +61,13 @@ class PasswordViewController: UIViewController, NVActivityIndicatorViewable {
     // MARK: - навигация
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier! {
-        case Constants.userInfoSegue:
-            let destinationVC = segue.destination as! UserPageViewController
-            destinationVC.user = sender as! User
+        case Constants.newsInfoSegue:
+            let destinationVC = segue.destination as! FeedViewController
         default: break
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
         passwordText.delegate = self
     }
 }
