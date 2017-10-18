@@ -47,7 +47,7 @@ class WelcomePageViewController: UIViewController {
         
         // adding button "Далее"
         if !emailText.text!.isEmpty {
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Далее", style: UIBarButtonItemStyle.plain, target: nil, action: #selector (WelcomePageViewController.showPasswordPage))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Далее", style: UIBarButtonItemStyle.plain, target: self, action: #selector (showPasswordPage))
         }
         else {
             self.navigationItem.rightBarButtonItem = nil
@@ -57,7 +57,6 @@ class WelcomePageViewController: UIViewController {
     func showPasswordPage() {
         
         let email = emailText.text!
-        
         // testing valid email
         if validateEmail(email) == false {
             showAlert ("Введите правильный email")
@@ -82,7 +81,6 @@ class WelcomePageViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
         emailText.delegate = self
     }
 }

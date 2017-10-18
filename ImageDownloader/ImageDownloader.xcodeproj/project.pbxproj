@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CC2D665FE3B63A9FF9032773 /* Pods_ImageDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D22DB53E65A82BE3C550CBA7 /* Pods_ImageDownloader.framework */; };
+		F51150691F0916570095B915 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51150681F0916570095B915 /* ImageDownloader.swift */; };
+		F55F46021F09066C00E099CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55F46011F09066C00E099CF /* AppDelegate.swift */; };
+		F55F46041F09066C00E099CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55F46031F09066C00E099CF /* ViewController.swift */; };
+		F55F46071F09066C00E099CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F55F46051F09066C00E099CF /* Main.storyboard */; };
+		F55F46091F09066C00E099CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F55F46081F09066C00E099CF /* Assets.xcassets */; };
+		F55F460C1F09066C00E099CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F55F460A1F09066C00E099CF /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D22DB53E65A82BE3C550CBA7 /* Pods_ImageDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E627B91999E4AFB1BC685882 /* Pods-ImageDownloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageDownloader.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageDownloader/Pods-ImageDownloader.release.xcconfig"; sourceTree = "<group>"; };
+		F51150681F0916570095B915 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		F55F45FE1F09066C00E099CF /* ImageDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F55F46011F09066C00E099CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F55F46031F09066C00E099CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F55F46061F09066C00E099CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F55F46081F09066C00E099CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F55F460B1F09066C00E099CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F55F460D1F09066C00E099CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7D787635FFA6995F5788D39 /* Pods-ImageDownloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageDownloader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageDownloader/Pods-ImageDownloader.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F55F45FB1F09066C00E099CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC2D665FE3B63A9FF9032773 /* Pods_ImageDownloader.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		525EFCBC1395360EF6517617 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F7D787635FFA6995F5788D39 /* Pods-ImageDownloader.debug.xcconfig */,
+				E627B91999E4AFB1BC685882 /* Pods-ImageDownloader.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B3C5112AB99EA4F6D77112D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D22DB53E65A82BE3C550CBA7 /* Pods_ImageDownloader.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F511506A1F0916700095B915 /* StoryBoard  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "StoryBoard ";
+			sourceTree = "<group>";
+		};
+		F511506B1F09167E0095B915 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				F51150681F0916570095B915 /* ImageDownloader.swift */,
+			);
+			name = Class;
+			sourceTree = "<group>";
+		};
+		F511506C1F0916AF0095B915 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F55F46031F09066C00E099CF /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F55F45F51F09066C00E099CF = {
+			isa = PBXGroup;
+			children = (
+				F55F46001F09066C00E099CF /* ImageDownloader */,
+				F55F45FF1F09066C00E099CF /* Products */,
+				525EFCBC1395360EF6517617 /* Pods */,
+				B3C5112AB99EA4F6D77112D7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F55F45FF1F09066C00E099CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F55F45FE1F09066C00E099CF /* ImageDownloader.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F55F46001F09066C00E099CF /* ImageDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				F55F46011F09066C00E099CF /* AppDelegate.swift */,
+				F511506C1F0916AF0095B915 /* Controller */,
+				F511506B1F09167E0095B915 /* Class */,
+				F511506A1F0916700095B915 /* StoryBoard  */,
+				F55F46051F09066C00E099CF /* Main.storyboard */,
+				F55F46131F09067800E099CF /* Supporting Files */,
+			);
+			path = ImageDownloader;
+			sourceTree = "<group>";
+		};
+		F55F46131F09067800E099CF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F55F46081F09066C00E099CF /* Assets.xcassets */,
+				F55F460D1F09066C00E099CF /* Info.plist */,
+				F55F460A1F09066C00E099CF /* LaunchScreen.storyboard */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F55F45FD1F09066C00E099CF /* ImageDownloader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F55F46101F09066C00E099CF /* Build configuration list for PBXNativeTarget "ImageDownloader" */;
+			buildPhases = (
+				5EC092D8A0208E3A220912C7 /* [CP] Check Pods Manifest.lock */,
+				F55F45FA1F09066C00E099CF /* Sources */,
+				F55F45FB1F09066C00E099CF /* Frameworks */,
+				F55F45FC1F09066C00E099CF /* Resources */,
+				67C7576A447A94C97FB112E9 /* [CP] Embed Pods Frameworks */,
+				EEB92AA1E2CBAB9BB505669E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImageDownloader;
+			productName = ImageDownloader;
+			productReference = F55F45FE1F09066C00E099CF /* ImageDownloader.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F55F45F61F09066C00E099CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Elibay Nuptebek";
+				TargetAttributes = {
+					F55F45FD1F09066C00E099CF = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F55F45F91F09066C00E099CF /* Build configuration list for PBXProject "ImageDownloader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F55F45F51F09066C00E099CF;
+			productRefGroup = F55F45FF1F09066C00E099CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F55F45FD1F09066C00E099CF /* ImageDownloader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F55F45FC1F09066C00E099CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F55F460C1F09066C00E099CF /* LaunchScreen.storyboard in Resources */,
+				F55F46091F09066C00E099CF /* Assets.xcassets in Resources */,
+				F55F46071F09066C00E099CF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5EC092D8A0208E3A220912C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		67C7576A447A94C97FB112E9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImageDownloader/Pods-ImageDownloader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EEB92AA1E2CBAB9BB505669E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImageDownloader/Pods-ImageDownloader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F55F45FA1F09066C00E099CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F55F46041F09066C00E099CF /* ViewController.swift in Sources */,
+				F51150691F0916570095B915 /* ImageDownloader.swift in Sources */,
+				F55F46021F09066C00E099CF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F55F46051F09066C00E099CF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F55F46061F09066C00E099CF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F55F460A1F09066C00E099CF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F55F460B1F09066C00E099CF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F55F460E1F09066C00E099CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F55F460F1F09066C00E099CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F55F46111F09066C00E099CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7D787635FFA6995F5788D39 /* Pods-ImageDownloader.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ImageDownloader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Enk.ImageDownloader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F55F46121F09066C00E099CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E627B91999E4AFB1BC685882 /* Pods-ImageDownloader.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ImageDownloader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Enk.ImageDownloader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F55F45F91F09066C00E099CF /* Build configuration list for PBXProject "ImageDownloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F55F460E1F09066C00E099CF /* Debug */,
+				F55F460F1F09066C00E099CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F55F46101F09066C00E099CF /* Build configuration list for PBXNativeTarget "ImageDownloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F55F46111F09066C00E099CF /* Debug */,
+				F55F46121F09066C00E099CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F55F45F61F09066C00E099CF /* Project object */;
+}

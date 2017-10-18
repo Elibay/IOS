@@ -9,31 +9,22 @@
 import Cache
 
 private struct Caches {
-    static let jsonCache = SpecializedCache < JSON > (name: "JSON Cache")
+    static let cache = SpecializedCache < UIImage > (name: "UIImage Cache")
 }
 private struct Constants {
-    static let user = "User"
+    static let image = "Image"
 }
 
 struct Storage {
-    static var user: User? {
-        get {
-            if let json = Caches.jsonCache.object(forKey: Constants.user) {
-                switch json {
-                case .dictionary(let userJson): return User (JSON: userJson)!
-                default:
-                    break
-                }
-            }
-            return nil
+    static func setImage (image: UIImage, url: String) {
+        Caches.cache.async.addObject (image, forKey: url) { error in
+//            print (error)
         }
-        set {
-            if let user = newValue {
-                try! Caches.jsonCache.addObject(JSON.dictionary (user.toJSON()), forKey: Constants.user)
-            }
-            else {
-                try! Caches.jsonCache.removeObject(forKey: Constants.user)
-            }
+    }
+    static func getImage (url: String) -> UIImage? {
+        Caches.cache.async.object(forKey: url) { (image: UIImage?) in
+            return image
         }
+        return nil
     }
 }

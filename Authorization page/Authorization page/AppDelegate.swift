@@ -28,12 +28,12 @@ import IQKeyboardManagerSwift
         keyboardManager.keyboardDistanceFromTextField = 60
         
 //         cache setting
-        if Storage.user != nil {
-            window?.rootViewController = Storyboard.userPage
-        }
-        else {
-            window?.rootViewController = Storyboard.authorizationPage
-        }
+//        if Storage.user != nil {
+//            window?.rootViewController = Storyboard.userPage
+//        }
+//        else {
+//           window?.rootViewController = Storyboard.authorizationPage
+//        }
         // Override point for customization after application launch.
         return true
     }

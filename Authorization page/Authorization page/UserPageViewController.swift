@@ -24,9 +24,6 @@ class UserPageViewController: UIViewController, NVActivityIndicatorViewable {
         }
     }
     private func updateUI () {
-        if user == nil {
-            user = Storage.user
-        }
         nameText?.text = user.name
         ImageDownloader.fetchImage(with: user.imageUrl) { image in
             self.spiner.stopAnimating()
@@ -34,7 +31,6 @@ class UserPageViewController: UIViewController, NVActivityIndicatorViewable {
         }
     }
     @IBAction func logOut(_ sender: UIButton) {
-        Storage.user = nil
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let secondVC = storyBoard.instantiateViewController(withIdentifier: "MainView")
         self.present(secondVC, animated: true, completion: nil)
@@ -42,7 +38,7 @@ class UserPageViewController: UIViewController, NVActivityIndicatorViewable {
     
     override func viewDidLoad() {
         self.avatarImage.layer.borderWidth = 3.0;
-        self.avatarImage.layer.borderColor = UIColor.black.cgColor
+        self.avatarImage.layer.borderColor = UIColor.white.cgColor
         self.avatarImage.layer.cornerRadius = self.avatarImage.frame.size.width / 2;
         self.avatarImage.clipsToBounds = true
         self.navigationController?.setNavigationBarHidden(true, animated: true)
